@@ -1,156 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
-    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내사랑 생일 축하해!</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
         * {
-            font-family: 'Gowun Dodum', sans-serif;
+            font-family: 'Jua', sans-serif;
         }
 
-        .mytitle {
-            background-color: green;
-            color: white;
+        .container {
+            width: 500px;
+            margin: 20px auto 20px auto;
+        }
 
-            height: 250px;
-
+        .myimg {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
-            background-position: center;
-            background-size: cover;
         }
 
-        .mytitle>button {
-            width: 250px;
-            height: 50px;
-
-            background-color: transparent;
-
-            border: 1px solid white;
-            color: white;
-
-            border-radius: 50px;
-
-            margin-top: 20px;
+        .myhl {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .mytitle>button:hover {
-            border: 3px solid white;
-        }
-
-        .mycomment {
-            color: gray;
-        }
-
-        .mycards {
-            width: 1200px;
-            margin: 20px auto 20px auto;
-        }
-        .mypost{
-
-            width: 500px;
-            
-            margin: 20px auto 20px auto;
-            padding: 20px 20px 20px 20px;
-
-            box-shadow: 0px 0px 3px 0px gray;
-        }
-        .mybtn{
-            margin-top: 20px;
-
+        .click {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
         }
-        .mybtn > button{
-            margin-right: 10px;
+
+        .massage {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .message-container {
+            flex-shrink: 1;
+            height: 150px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 5%;
+        }
+
+        .message-container::before {
+            content: "";
+            top: 50%;
+            left: 1em;
+            border: 1em solid transparent;
+            border-right: 1em solid rgba(92, 174, 227, 0.9);
+            z-index: 0;
+        }
+
+        .message-box {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 60%;
+            justify-content: center;
+            align-items: center;
+            background: rgba(92, 174, 227, 0.9);
+            border-radius: 15px;
+            padding-left: 1.8em;
+            padding-right: 1.8em;
+        }
+
+        .message-box p {
+            font-size: 25px;
+            color: white;
+        }
+
+        .message-box-next {
+            position: absolute;
+            right: 0;
+            padding-right: 1em;
+        }
+
+        .message-box-next p {
+            font-size: 27px;
+            color: white;
         }
     </style>
 </head>
 
 <body>
-    <div class="mytitle">
-        <h1>내 생애 최고의 영화들!</h1>
-        <button>영화 기록하기</button>
-    </div>
-    <div class="mypost">
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">영화 URL</label>
-        </div>
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Comments</label>
-        </div>
-        <div class="mybtn">
-            <button type="button" class="btn btn-dark">기록하기</button>
-            <button type="button" class="btn btn-outline-dark">닫기</button>
-        </div>
-    </div>
-    <div class="mycards">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">여기에 나의 의견을 쓰면 되겠죠</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">여기에 나의 의견을 쓰면 되겠죠</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">여기에 나의 의견을 쓰면 되겠죠</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">여기에 나의 의견을 쓰면 되겠죠</p>
+    <h1 class="myhl">수정아 생일 축하해❤️</h1>
+    <div class="container">
+        <div class="myimg"><a
+                href="https://drive.google.com/file/d/11kaG5_j0Gmk2t4RIt9Fy9GLr9ucD7AGO/view?usp=sharing"><img
+                    src="happy.jpg" alt="Happy Birthday!" width="500"></a></div>
+        <div class="click"><img src="my_boki.png" alt="여기눌러!" width="100">
+            <div class="message">
+                <div class="message-container">
+                    <div class='message-box'>
+                        <p>상자를 눌러봐!!</p>
                     </div>
                 </div>
             </div>
